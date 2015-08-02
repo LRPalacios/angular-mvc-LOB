@@ -66,6 +66,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.js" />
+    <Content Include="app\products\productListCtrl.js" />
+    <Content Include="css\app.css" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -84,9 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\prices\" />
-    <Folder Include="app\products\" />
     <Folder Include="common\services\" />
-    <Folder Include="css\" />
     <Folder Include="fonts\" />
     <Folder Include="images\" />
   </ItemGroup>

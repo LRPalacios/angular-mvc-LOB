@@ -1,31 +1,51 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Product Management</title>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href="css/app.css" rel="stylesheet" />
 </head>
-<body ng-app>
-    <table>
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Product</th>
-                <th>Code</th>
-                <th>Available</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="product in products">
-                <td>
-                    <img src="{{product.imageUrl}}" title="{{product.name}}" />
-                </td>
-                <td>{{product.productName}}</td>
-                <td>{{product.productCode}}</td>
-                <td>{{product.releaseDate}}</td>
-                <td>{{product.price}}</td>
-            </tr>
-        </tbody>
-    </table>
+<body ng-app="productManagement">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            Product List
+        </div>
+        <div class="panel-body">
+            <table ng-controller="ProductListCtrl as vm" class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <button class="btn btn-primary" type="button" ng-click="vm.toogleImage()">
+                                {{vm.showImage ? "Hide" : "Show"}} Image
+                            </button>
+                        </th>
+                        <th>Product</th>
+                        <th>Code</th>
+                        <th>Available</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in vm.products">
+                        <td>
+                            <img ng-src="{{product.imageUrl}}"
+                                 ng-if="vm.showImage"
+                                 title="{{product.name}}"
+                                 class="thumbnail"
+                                 height="120" />
+                        </td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productCode}}</td>
+                        <td>{{product.releaseDate}}</td>
+                        <td>{{product.price | currency}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/products/productListCtrl.js"></script>
 </body>
 </html>
