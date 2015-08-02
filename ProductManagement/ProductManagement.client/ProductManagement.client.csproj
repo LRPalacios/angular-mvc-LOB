@@ -68,7 +68,10 @@
   <ItemGroup>
     <Content Include="app\app.js" />
     <Content Include="app\products\productListCtrl.js" />
+    <Content Include="common\services\common.services.js" />
+    <Content Include="common\services\productResource.js" />
     <Content Include="css\app.css" />
+    <Content Include="js\angular-resource.js" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -87,7 +90,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\prices\" />
-    <Folder Include="common\services\" />
     <Folder Include="fonts\" />
     <Folder Include="images\" />
   </ItemGroup>
