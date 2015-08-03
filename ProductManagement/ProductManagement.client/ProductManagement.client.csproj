@@ -66,6 +66,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\app.js" />
+    <Content Include="app\products\productListCtrl.js" />
+    <Content Include="app\products\productListView.html" />
+    <Content Include="app\welcomeView.html" />
+    <Content Include="common\services\common.services.js" />
+    <Content Include="common\services\productResource.js" />
+    <Content Include="css\app.css" />
+    <Content Include="js\angular-resource.js" />
+    <Content Include="js\angular-ui-router.js" />
+    <Content Include="js\jquery-2.1.4.min.js" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -84,9 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\prices\" />
-    <Folder Include="app\products\" />
-    <Folder Include="common\services\" />
-    <Folder Include="css\" />
     <Folder Include="fonts\" />
     <Folder Include="images\" />
   </ItemGroup>
