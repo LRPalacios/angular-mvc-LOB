@@ -20,6 +20,20 @@
                             templateUrl: "app/products/productListView.html",
                             controller: "ProductListCtrl as vm"
                         })
+                         .state("productDetail", {
+                             url: "/products/detail:productId",
+                             templateUrl: "app/products/productDetailView.html",
+                             controller: "ProductDetailCtrl as vm",
+                             resolve: {
+                                 productResource: "productResource",
+
+                                 product: function (productResource, $stateParams) {
+                                     var productId = $stateParams.productId;
+                                     return productResource.get(
+                                         { Id: productId }).$promise;
+                                 }
+                             }
+                         })
                         .state("productEdit", {
                             url: "/products/edit:productId",
                             templateUrl: "app/products/productEditView.html",

@@ -26,7 +26,11 @@
                              class="thumbnail"
                              height="120" />
                     </td>
-                    <td>{{product.productName}}</td>
+                    <td>
+                        <a ui-sref="productDetail({productId:product.id})">
+                            {{product.productName}}
+                        </a>
+                    </td>
                     <td>{{product.productCode}}</td>
                     <td>{{product.releaseDate}}</td>
                     <td>{{product.price | currency}}</td>
